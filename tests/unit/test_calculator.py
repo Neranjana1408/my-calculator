@@ -32,5 +32,15 @@ class TestMultiplyDivideWithValidation:
         """Test divide rejects non-numeric inputs."""
         with pytest.raises(TypeError, match="Division requires numeric inputs"):
             divide("10", 2)
+    
+    def test_add_negative_numbers(self):
+        """Test adding negative numbers"""
+        assert add(-1, -1) == -2
+        assert add(-5, 3) == -2
+
+    def test_subtract_negative_numbers(self):
+        """Test subtracting negative numbers"""
+        assert subtract(-1, -1) == 0
+        assert subtract(-5, -3) == -2
 
 # TODO: Students will add TestMultiplyDivide class
