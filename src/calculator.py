@@ -4,46 +4,46 @@ Students will extend this with more functions
 """
 
 
-def add(a, b):  # pylint: disable=invalid-name
+def add(num1, num2):  # pylint: disable=invalid-name
     """Add two numbers together"""
-    return a + b
+    return num1 + num2
 
 
-def subtract(a, b):
+def subtract(num1, num2):
     """Subtract b from a"""
-    return a - b
+    return num1 - num2
 
 
-def multiply(a, b):
+def multiply(num1, num2):
     """Multiply two numbers with input validation"""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Both arguments must be numbers")
-    return a * b
+    return num1 * num2
 
 
-def divide(a, b):
+def divide(num1, num2):
     """Divide a by b with error handling"""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Division requires numeric inputs")
-    if b == 0:
+    if num2 == 0:
         raise ValueError("Cannot divide by zero")
-    return a / b
+    return num1 / num2
 
 
-def power(a, b):
+def power(num1, num2):
     """Raise a to the power of b"""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+    if not isinstance(num1, (int, float)) or not isinstance(num1, (int, float)):
         raise TypeError("Power function requires numeric inputs")
-    return a**b
+    return num1**num2
 
 
-def square_root(a):
+def square_root(num1):
     """Calculate square root of a"""
-    if not isinstance(a, (int, float)):
+    if not isinstance(num1, (int, float)):
         raise TypeError("Square root requires a numeric input")
-    if a < 0:
+    if num1 < 0:
         raise ValueError("Cannot calculate square root of negative number")
-    return a**0.5
+    return num1**0.5
 
 
 if __name__ == "__main__":
