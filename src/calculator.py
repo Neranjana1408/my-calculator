@@ -3,54 +3,55 @@ Calculator Module - Basic arithmetic operations
 Students will extend this with more functions
 """
 
-def add(a, b):
+
+def add(num1, num2):  # pylint: disable=invalid-name
     """Add two numbers together"""
-    return a + b
+    return num1 + num2
 
-def subtract(a, b):
+
+def subtract(num1, num2):
     """Subtract b from a"""
-    return a - b
+    return num1 - num2
 
-def multiply(a, b):
-    """Multiply two numbers with input validation and logging."""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+
+def multiply(num1, num2):
+    """Multiply two numbers with input validation"""
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Both arguments must be numbers")
-    
-    print(f"Multiplying {a} × {b}")  # Added logging
-    result = a * b
-    print(f"Result: {result}")
-    return result
+    return num1 * num2
 
-def divide(a, b):
-    """Divide a by b with enhanced error handling."""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+
+def divide(num1, num2):
+    """Divide a by b with error handling"""
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Division requires numeric inputs")
-    if b == 0:
-        raise ValueError(f"Cannot divide {a} by zero - division by zero is undefined")
-    
-    print(f"Dividing {a} ÷ {b}")  # Added logging
-    result = a / b
-    print(f"Result: {result}")
-    return result
+    if num2 == 0:
+        raise ValueError("Cannot divide by zero")
+    return num1 / num2
 
-def multiply(a, b):
-    """Multiply two numbers"""
-    return a * b
-def divide(a, b):
-    """Divide a by b"""
-    return a / b
 
-def power(a, b):
+def power(num1, num2):
     """Raise a to the power of b"""
-    return a ** b
-def square_root(a):
+    # FIX: Corrected the redundant type check on num1 to check num2
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+        raise TypeError("Power function requires numeric inputs")
+    return num1**num2
+
+
+def square_root(num1):
     """Calculate square root of a"""
-    if a < 0:
+    if not isinstance(num1, (int, float)):
+        raise TypeError("Square root requires a numeric input")
+    if num1 < 0:
         raise ValueError("Cannot calculate square root of negative number")
-    return a ** 0.5
-# TODO: Students will add multiply, divide, power, sqrt functions
+    return num1**0.5
+
 
 if __name__ == "__main__":
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
+    print(f"4 × 2 = {multiply(4, 2)}")
+    print(f"9 ÷ 3 = {divide(9, 3)}")
+    print(f"2 ^ 3 = {power(2, 3)}")
+    print(f"√16 = {square_root(16)}")

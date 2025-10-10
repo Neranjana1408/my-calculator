@@ -107,3 +107,5 @@ black src/ tests/
 bandit -r src/
 bandit -r src/ -v
 bandit -r src/ -f json -o security_report.json
+
+
