@@ -25,23 +25,15 @@ def calculate(operation, num1, num2=None):
             result = divide(num1, num2)
         elif operation == "power":
             result = power(num1, num2)
-        elif operation == "sqrt" or operation == "square_root":
+        elif operation == "square_root":
             result = square_root(num1)
         else:
             click.echo(f"Unknown operation: {operation}")
             sys.exit(1)
 
-        # Format result nicely
-        if result == int(result):
-            click.echo(int(result))
-        else:
-            click.echo(f"{result:.2f}")
-
-    except ValueError as e:
-        click.echo(f"Error: {e}")
-        sys.exit(1)
+        click.echo(f"Result: {result}")
     except Exception as e:
-        click.echo(f"Unexpected error: {e}")
+        click.echo(f"Error: {e}")
         sys.exit(1)
 
 
