@@ -2,7 +2,7 @@
 Integration Tests - CLI + Calculator Working Together
 """
 from click.testing import CliRunner
-import pytest
+import pytest # type: ignore
 
 
 class TestCLIIntegration:

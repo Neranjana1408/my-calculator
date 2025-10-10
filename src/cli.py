@@ -36,11 +36,11 @@ def calculate(operation, num1, num2=None):
         else:
             click.echo(f"{result:.2f}")
 
-    except ValueError as e:
-        click.echo(f"Error: {e}")
+    except ValueError as error:
+        click.echo(f"Error: {error}")
         sys.exit(1)
-    except Exception as e:  # pylint: disable=broad-exception-caught
-        click.echo(f"Unexpected error: {e}")
+    except Exception as error:  # pylint: disable=broad-exception-caught
+        click.echo(f"Unexpected error: {error}")
         sys.exit(1)
 
 

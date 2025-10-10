@@ -32,7 +32,8 @@ def divide(num1, num2):
 
 def power(num1, num2):
     """Raise a to the power of b"""
-    if not isinstance(num1, (int, float)) or not isinstance(num1, (int, float)):
+    # FIX: Corrected the redundant type check on num1 to check num2
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Power function requires numeric inputs")
     return num1**num2
 
